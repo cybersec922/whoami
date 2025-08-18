@@ -329,6 +329,13 @@
             font-family: 'JetBrains Mono', monospace;
         }
         
+        .contact-hint {
+            color: #666;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
         .contact-btn {
             background: transparent;
             border: 2px solid #00ff00;
@@ -452,6 +459,28 @@
         @keyframes typewriter {
             from { width: 0; }
             to { width: 100%; }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
         }
         
         /* Responsive design */
@@ -619,19 +648,21 @@
             
             <!-- Contact Methods -->
             <div class="contact-methods">
-                <div class="contact-method">
+                <div class="contact-method" onclick="copyToClipboard('cybersec922', 'Discord')" style="cursor: pointer;">
                     <div class="contact-icon">🎮</div>
                     <div class="contact-info">
                         <h3>Discord</h3>
                         <p class="contact-detail">cybersec922</p>
+                        <p class="contact-hint">Click to copy username</p>
                     </div>
                 </div>
                 
-                <div class="contact-method">
+                <div class="contact-method" onclick="openWhatsApp('+923258202936')" style="cursor: pointer;">
                     <div class="contact-icon">📱</div>
                     <div class="contact-info">
                         <h3>WhatsApp</h3>
                         <p class="contact-detail">+92 325 8202936</p>
+                        <p class="contact-hint">Click to open WhatsApp</p>
                     </div>
                 </div>
             </div>
@@ -704,6 +735,43 @@
             }, 2000);
         }
         
+        // Copy to clipboard function
+        function copyToClipboard(text, platform) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show success message
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #00ff00;
+                    color: #000;
+                    padding: 15px 25px;
+                    border-radius: 8px;
+                    font-family: 'JetBrains Mono', monospace;
+                    font-weight: 600;
+                    z-index: 10000;
+                    animation: slideIn 0.3s ease-out;
+                `;
+                notification.textContent = `${platform} copied to clipboard!`;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease-out forwards';
+                    setTimeout(() => notification.remove(), 300);
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Failed to copy: ', err);
+                alert(`Failed to copy ${platform} to clipboard`);
+            });
+        }
+        
+        // Open WhatsApp function
+        function openWhatsApp(phoneNumber) {
+            const whatsappUrl = `https://wa.me/${phoneNumber}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
         // Contact button effect
         function initiateContact() {
             const btn = document.querySelector('.contact-btn');
@@ -773,4 +841,3 @@
     </script>
 </body>
 </html>
-
