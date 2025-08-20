@@ -185,6 +185,32 @@
             animation: expand 2s ease-in-out infinite;
         }
         
+        .skill-category {
+            margin: 50px 0;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: #00ff00;
+            animation: expand 2s ease-in-out infinite;
+        }
+        
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -573,36 +599,124 @@
         <!-- Skills Section -->
         <section class="skills">
             <h2 class="section-title">SKILLS & EXPERTISE</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🔒</div>
-                    <h3 class="skill-name">DevSecOps</h3>
-                    <p class="skill-desc">End-to-end security integration, CI/CD pipelines, infrastructure as code, and automated security testing.</p>
+            
+            <!-- Core Skills -->
+            <div class="skill-category">
+                <h3 class="category-title">🔒 Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🔒</div>
+                        <h3 class="skill-name">DevSecOps</h3>
+                        <p class="skill-desc">End-to-end security integration, CI/CD pipelines, infrastructure as code, and automated security testing.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🐍</div>
+                        <h3 class="skill-name">Python Development</h3>
+                        <p class="skill-desc">Full-stack Python development, automation scripts, API development, and system integration.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🐧</div>
+                        <h3 class="skill-name">Linux Administration</h3>
+                        <p class="skill-desc">System administration, server management, performance tuning, and security hardening.</p>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🐍</div>
-                    <h3 class="skill-name">Python Development</h3>
-                    <p class="skill-desc">Full-stack Python development, automation scripts, API development, and system integration.</p>
+            </div>
+            
+            <!-- Container & Orchestration -->
+            <div class="skill-category">
+                <h3 class="category-title">🐳 Container & Orchestration</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🐳</div>
+                        <h3 class="skill-name">Docker</h3>
+                        <p class="skill-desc">Containerization, microservices deployment, and container orchestration strategies.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📦</div>
+                        <h3 class="skill-name">Docker Compose</h3>
+                        <p class="skill-desc">Multi-container applications, service orchestration, and development environment management.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🐝</div>
+                        <h3 class="skill-name">Docker Swarm</h3>
+                        <p class="skill-desc">Container clustering, load balancing, and high-availability container orchestration.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🚀</div>
+                        <h3 class="skill-name">Kubernetes</h3>
+                        <p class="skill-desc">Container orchestration, microservices architecture, and scalable deployments.</p>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3 class="skill-name">Automation</h3>
-                    <p class="skill-desc">Process automation, workflow optimization, and building scalable automated systems.</p>
+            </div>
+            
+            <!-- Cloud & Infrastructure -->
+            <div class="skill-category">
+                <h3 class="category-title">☁️ Cloud & Infrastructure</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">☁️</div>
+                        <h3 class="skill-name">Multi-Cloud</h3>
+                        <p class="skill-desc">AWS, Azure, GCP expertise, cost optimization, and cloud-native architecture design.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🔄</div>
+                        <h3 class="skill-name">Infrastructure as Code</h3>
+                        <p class="skill-desc">Terraform, Ansible, CloudFormation, and automated infrastructure provisioning.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">📈</div>
+                        <h3 class="skill-name">Monitoring & Logging</h3>
+                        <p class="skill-desc">Prometheus, Grafana, ELK stack, alerting systems, and performance monitoring.</p>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🐧</div>
-                    <h3 class="skill-name">Linux Administration</h3>
-                    <p class="skill-desc">System administration, server management, performance tuning, and security hardening.</p>
+            </div>
+            
+            <!-- Development & APIs -->
+            <div class="skill-category">
+                <h3 class="category-title">⚡ Development & APIs</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3 class="skill-name">Python Frameworks</h3>
+                        <p class="skill-desc">Django, Flask, FastAPI development, full-stack applications, and REST APIs.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🔌</div>
+                        <h3 class="skill-name">API Development</h3>
+                        <p class="skill-desc">RESTful APIs, GraphQL, microservices architecture, and API documentation.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🎯</div>
+                        <h3 class="skill-name">API Automation</h3>
+                        <p class="skill-desc">REST API testing, webhook automation, integration testing, and API workflow automation.</p>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">☁️</div>
-                    <h3 class="skill-name">Cloud Computing</h3>
-                    <p class="skill-desc">Multi-cloud environments, infrastructure management, and cloud-native solutions.</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🚀</div>
-                    <h3 class="skill-name">Kubernetes</h3>
-                    <p class="skill-desc">Container orchestration, microservices architecture, and scalable deployments.</p>
+            </div>
+            
+            <!-- Advanced Automation -->
+            <div class="skill-category">
+                <h3 class="category-title">🤖 Advanced Automation</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">⚙️</div>
+                        <h3 class="skill-name">Process Automation</h3>
+                        <p class="skill-desc">Workflow optimization, business process automation, and scalable automated systems.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🕵️</div>
+                        <h3 class="skill-name">Undetected Selenium</h3>
+                        <p class="skill-desc">Advanced web automation with anti-detection techniques, stealth browsing, and bot evasion.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🤖</div>
+                        <h3 class="skill-name">AI Automation</h3>
+                        <p class="skill-desc">Intelligent process automation using AI/ML, natural language processing, and cognitive workflows.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🌐</div>
+                        <h3 class="skill-name">AI Web Automation</h3>
+                        <p class="skill-desc">Smart web scraping, intelligent form filling, and AI-powered web interaction automation.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -663,6 +777,15 @@
                         <h3>WhatsApp</h3>
                         <p class="contact-detail">+92 325 8202936</p>
                         <p class="contact-hint">Click to open WhatsApp</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method" onclick="openGitHub()" style="cursor: pointer;">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-info">
+                        <h3>GitHub</h3>
+                        <p class="contact-detail">@cybersec922</p>
+                        <p class="contact-hint">Click to view profile</p>
                     </div>
                 </div>
             </div>
@@ -770,6 +893,12 @@
         function openWhatsApp(phoneNumber) {
             const whatsappUrl = `https://wa.me/${phoneNumber}`;
             window.open(whatsappUrl, '_blank');
+        }
+        
+        // Open GitHub function
+        function openGitHub() {
+            const githubUrl = 'https://github.com/cybersec922';
+            window.open(githubUrl, '_blank');
         }
         
         // Contact button effect
